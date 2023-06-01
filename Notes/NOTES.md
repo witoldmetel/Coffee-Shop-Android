@@ -214,6 +214,7 @@ if no return is expected, we use Unit (In Swift we have Void)
 val myFunction: () -> Unit {
 
 }
+
 // implicit `it` argument when there is only one argument
 // you can still name it if you want to
 val greet: (String) -> String
@@ -222,4 +223,146 @@ greet = {
 }
 
 val myCalc: (Int, Int) -> Int = a,b -> a+b
+```
+
+# Classes
+
+Full support for OOP, we won't use it a lot in JetPack composable
+Class syntax is different from what you expect!
+
+```
+class Person {
+    // property
+    public var id : Int = 0
+    // function - method
+    fun print() {
+        println("Person id: ${this.id}")
+    }
+}
+// no new keyword!
+val p = Person()
+
+// so far, so good, but there's more.
+// classes are closed by default, they can't be inherited
+class User: Person() { }   // WRONG!
+
+// you have to declare a class explicitly as open to let it being extended
+// when we declare the superclass, we are actually executing its constructor! (parenthesis)
+// also every method that you want to be overridden must have open
+open class Record {
+    open fun open() {}
+}
+class DBRecord: Record() {
+    override fun open() {}   // you have to use override prefix
+}
+
+// let's talk about constructors
+// there is a Primary constructor, secondary constructors and a initializer block
+// The primary constructor is defined in the class name definition
+
+open class Request(val url: String)   // if the class has no other props or methods, don't need a block
+// primary constructor arguments become properties if var or val is used!
+val r = Request("https://frontendmasters.com")
+print(r.url)
+
+// An initializer block is just a code that will be executed after init
+// You can have many init blocks per class
+class HttpRequest(url: String): Request(url) {
+    init {
+        print("Connecting to HTTP server...")
+    }
+}
+
+// Secondary constructors use the constructor key
+// They must call the primary constructor with the : this() suffix in signature
+class User(val id: Int) {
+    private var name= "Unnamed $id user"
+
+    constructor(name: String): this(0) {
+        this.name = name
+    }
+
+    constructor(id: Int, name: String): this(id) {
+        this.name = name
+    }
+}
+```
+
+# Other Data Types
+
+Kotlin has much more to offer, including the ability to create
+Interfaces - Objects - Data Classes - Enum Classes - Sealed Classes
+
+## INTERFACES
+
+```
+interface Listener {
+    fun listen()
+}
+class Human: Listener {
+    override fun listen() {
+        print("I'm listening!")
+    }
+}
+```
+
+## OBJECTS
+
+```
+object KotlinWorkshop {
+    val name = "Introduction to Kotlin and Android app development"
+    val url = "https://frontendmasters.com"
+}
+```
+
+## COMPANION OBJECT
+
+```
+// Classes don't have static members, but they contain a companion object
+class User(var name: String) {
+    fun print() {
+        print("Printing $name at $FONT_SIZE")
+    }
+
+    companion object {
+        const val collection = listOf(User("A"), User("B"))
+        const val FONT_SIZE = 12
+        fun printAll() {
+            for (user in collection) {
+                user.print()
+            }
+        }
+    }
+}
+```
+
+## SEALED CLASS
+
+A class that can have no instances; only an implicit companion object
+
+```
+sealed class Utilities {
+   fun plusTax(price: Double): Double = price * 1.10
+}
+```
+
+## ENUM CLASS
+
+```
+enum class Direction {
+    NORTH, SOUTH, WEST, EAST
+}
+enum class Color(val rgb: Int) {
+    RED(0xFF0000),
+    GREEN(0x00FF00),
+    BLUE(0x0000FF)
+}
+```
+
+## DATA CLASS
+
+basic behavior for classes holding data (such as toString, equals, copy)
+
+```
+data class Product(val id: Int, var name: String, var price: Double)
 ```
