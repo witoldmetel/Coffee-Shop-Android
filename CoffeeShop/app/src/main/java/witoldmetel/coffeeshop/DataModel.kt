@@ -1,6 +1,6 @@
 package witoldmetel.coffeeshop
 
-class Product(var id: Int, var name: String, price: Double, var image: String) {
+class Product(var id: Int, var name: String, var price: Double, var image: String) {
     val imageUrl get() = "https://firtman.github.io/coffeemasters/api/images/${this.image}"
 }
 
