@@ -61,6 +61,7 @@ private fun OfferPreview() {
 @Composable
 fun OffersPage() {
     Column(modifier = Modifier
+        .padding(10.dp)
         .verticalScroll(rememberScrollState())
     ) {
         Offer(title = "Early Coffee", description = "10% off. Offer valid from 6am to 9am.")
