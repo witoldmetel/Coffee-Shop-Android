@@ -21,16 +21,15 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import witoldmetel.coffeeshop.DataManager
 import witoldmetel.coffeeshop.Product
 import witoldmetel.coffeeshop.R
 import witoldmetel.coffeeshop.ui.theme.Alternative1
 import witoldmetel.coffeeshop.ui.theme.CardBackground
 
-@Preview(showBackground = true, widthDp = 400)
 @Composable
-fun MenuPage() {
+fun MenuPage(dataManager: DataManager) {
     LazyColumn {
         items(5) {
             Card(

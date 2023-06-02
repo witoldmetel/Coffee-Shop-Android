@@ -40,7 +40,7 @@ fun AppTitle() {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun App() {
+fun App(dataManager: DataManager) {
     var selectedRoute = remember {
         mutableStateOf(Routes.MenuPage.route)
     }
@@ -52,12 +52,11 @@ fun App() {
         content = {
             Box(modifier = Modifier.padding(vertical = 50.dp)) {
                 when(selectedRoute.value) {
-                    Routes.MenuPage.route -> MenuPage()
+                    Routes.MenuPage.route -> MenuPage(dataManager)
                     Routes.OffersPage.route -> OffersPage()
-                    Routes.OrderPage.route -> OrdersPage()
+                    Routes.OrderPage.route -> OrdersPage(dataManager)
                     Routes.InfoPage.route -> InfoPage()
                 }
-
             }
         },
         bottomBar = {
@@ -70,14 +69,3 @@ fun App() {
 
     )
 }
-
-
-@Preview
-@Composable
-fun AppPreview() {
-    CoffeeShopTheme() {
-        App()
-    }
-}
-
-
