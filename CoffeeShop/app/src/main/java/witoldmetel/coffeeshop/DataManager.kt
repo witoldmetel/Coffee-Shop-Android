@@ -24,31 +24,24 @@ class DataManager(app: Application): AndroidViewModel(app) {
 
     fun cartAdd(product: Product) {
         var found = false
-
         cart.forEach {
-            if (product.id == it.product.id) {
+            if (product.id==it.product.id) {
                 it.quantity++
                 found = true
             }
-
-            if (!found) {
-                // * means that you make a copy of array
-                cart = listOf(*cart.toTypedArray(), ItemInCart(product, 1))
-            }
+        }
+        if (!found) {
+            cart = listOf(*cart.toTypedArray(), ItemInCart(product, 1))
         }
     }
 
-    fun carClear() {
+    fun cartClear() {
         cart = listOf()
     }
 
     fun cartRemove(product: Product) {
         val aux = cart.toMutableList()
-
-        aux.removeAll {
-            it.product.id == product.id
-        }
-
+        aux.removeAll { it.product.id==product.id }
         cart = listOf(*aux.toTypedArray())
     }
 }
