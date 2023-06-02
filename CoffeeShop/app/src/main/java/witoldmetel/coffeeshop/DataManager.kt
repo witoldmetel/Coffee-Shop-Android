@@ -30,7 +30,9 @@ class DataManager(app: Application): AndroidViewModel(app) {
                 found = true
             }
         }
+
         if (!found) {
+            // * means that you make a copy of array
             cart = listOf(*cart.toTypedArray(), ItemInCart(product, 1))
         }
     }
