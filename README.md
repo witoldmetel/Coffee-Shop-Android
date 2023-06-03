@@ -2,6 +2,10 @@
 
 This is training app to get basic knowledge about Kotlin and Android Studio. All notes you can find in `Notes` folder together with kotlin playground
 
+| iOS                                                                          | Flutter                                                                          | React Native                                                                            | 
+| ----------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| [Repository](https://github.com/witoldmetel/Coffee-Shop-iOS) | [Repository](https://img.shields.io/badge/Coverage-0%25-red.svg 'Make me better!') | [Repository](https://img.shields.io/badge/Coverage-0%25-red.svg 'Make me better!') | 
+
 ## Demo
 
 Here you have example screen:
