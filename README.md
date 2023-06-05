@@ -4,7 +4,7 @@ This is training app to get basic knowledge about Kotlin and Android Studio. All
 
 | iOS                                                                          | Flutter                                                                          | React Native                                                                            | 
 | ----------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| [Repository](https://github.com/witoldmetel/Coffee-Shop-iOS) | [Repository](https://github.com/witoldmetel/Coffee-Shop-Flutter) | [Repository](https://img.shields.io/badge/Coverage-0%25-red.svg 'Make me better!') | 
+| [Repository](https://github.com/witoldmetel/Coffee-Shop-iOS) | [Repository](https://github.com/witoldmetel/Coffee-Shop-Flutter) | [Repository](https://github.com/witoldmetel/Coffee-Shop-React-Native) | 
 
 ## Demo
 
