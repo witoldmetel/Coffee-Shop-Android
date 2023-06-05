@@ -2,9 +2,9 @@
 
 This is training app to get basic knowledge about Kotlin and Android Studio. All notes you can find in `Notes` folder together with kotlin playground
 
-| iOS                                                                          | Flutter                                                                          | React Native                                                                            | 
+| iOS                                                                          | Flutter                                                                          | T3 Turbo Stack                                                                            | 
 | ----------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| [Repository](https://github.com/witoldmetel/Coffee-Shop-iOS) | [Repository](https://github.com/witoldmetel/Coffee-Shop-Flutter) | [Repository](https://github.com/witoldmetel/Coffee-Shop-React-Native) | 
+| [Repository](https://github.com/witoldmetel/Coffee-Shop-iOS) | [Repository](https://github.com/witoldmetel/Coffee-Shop-Flutter) | [Repository](https://github.com/witoldmetel/Coffee-Shop-T3-Turbo) | 
 
 ## Demo
 
